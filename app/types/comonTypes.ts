@@ -1,0 +1,4 @@
+interface propTypes {
+ openNav:()=>void
+ 
+}
