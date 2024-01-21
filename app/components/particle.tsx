@@ -1,9 +1,15 @@
 import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
+import {
+  type Container,
+  type ISourceOptions,
+  MoveDirection,
+  OutMode,
+} from "@tsparticles/engine";
 // import { loadAll } from "@/tsparticles/all"; // if you are going to use `loadAll`, install the "@tsparticles/all" package too.
- //import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
+// import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
 import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
- import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
+// import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
 
 const App = () => {
   const [init, setInit] = useState(false);
@@ -23,14 +29,14 @@ const App = () => {
     });
   }, []);
 
-  const particlesLoaded = (container:any) => {
+  const particlesLoaded = async (container?: Container): Promise<void> => {
     console.log(container);
   };
 
-  const options = useMemo(
+  const options: ISourceOptions = useMemo(
     () => ({
       background: {
-      
+        
       },
       fpsLimit: 120,
       interactivity: {
@@ -69,7 +75,7 @@ const App = () => {
           direction: "none",
           enable: true,
           outModes: {
-            default: "bounce",
+            default:"out",
           },
           random: false,
           speed: 6,
@@ -79,7 +85,7 @@ const App = () => {
           density: {
             enable: true,
           },
-          value: 100,
+          value: 80,
         },
         opacity: {
           value: 0.5,
