@@ -12,7 +12,8 @@ export default function Hero() {
        <Particles/>
        
     <div className='w-[80%] grid-cols-1 mx-auto grid lg:grid-cols-2 gap-[3rem] h-[100%] items-center'>
-    <div className='w-[400px] hidden  relative lg:flex items-center rounded-full h-[350px]'>
+    <div data-aos="zoom-in" 
+    className='w-[400px] hidden  relative lg:flex items-center rounded-full h-[350px]'>
     <Image src="/avatar2.png" alt="avatar" layout="fill" className=' object-cover rounded-full shadow-lg shadow-[#ffff]'/>
     </div>
       <div>
