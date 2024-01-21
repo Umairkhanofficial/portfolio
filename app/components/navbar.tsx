@@ -5,7 +5,7 @@ import Mobilenav from './mobilenav'
 
 export default function Navbar({openNav}:propTypes) {
   return (
-    <div className=' sticky z-[10000] w-[100%]  h-[12vh] bg-[#141c27] shadow-md'>
+    <div className='w-[100%] sticky z-[10000] top-0 h-[12vh] bg-[#141c27] shadow-md'>
         <div className='flex items-center justify-between w-[80%] mx-auto h-[100%] '>
             <h1 className='flex-[0.6] cursor-pointer text-[25px] font-bold text-white'>UK
                 <span className='text-yellow-300'></span>

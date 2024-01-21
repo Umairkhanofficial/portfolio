@@ -1,15 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-import {
-  type Container,
-  type ISourceOptions,
-  MoveDirection,
-  OutMode,
-} from "@tsparticles/engine";
 // import { loadAll } from "@/tsparticles/all"; // if you are going to use `loadAll`, install the "@tsparticles/all" package too.
-// import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
+ //import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
 import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
-// import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
+ import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
 
 const App = () => {
   const [init, setInit] = useState(false);
@@ -29,16 +23,14 @@ const App = () => {
     });
   }, []);
 
-  const particlesLoaded = async (container?: Container): Promise<void> => {
+  const particlesLoaded = (container:any) => {
     console.log(container);
   };
 
-  const options: ISourceOptions = useMemo(
+  const options = useMemo(
     () => ({
       background: {
-        color: {
-          value: "#0d47a1",
-        },
+      
       },
       fpsLimit: 120,
       interactivity: {
@@ -74,10 +66,10 @@ const App = () => {
           width: 1,
         },
         move: {
-          direction: MoveDirection.none,
+          direction: "none",
           enable: true,
           outModes: {
-            default: OutMode.out,
+            default: "bounce",
           },
           random: false,
           speed: 6,
@@ -87,7 +79,7 @@ const App = () => {
           density: {
             enable: true,
           },
-          value: 80,
+          value: 100,
         },
         opacity: {
           value: 0.5,
@@ -116,3 +108,4 @@ const App = () => {
 
   return <></>;
 };
+export default App;

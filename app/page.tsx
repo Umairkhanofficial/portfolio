@@ -4,6 +4,8 @@ import Navbar from './components/navbar'
 import { useState } from 'react'
 import Mobilenav from './components/mobilenav';
 import Hero from './components/hero';
+import About from './components/about';
+import Footer from './components/footer';
 export default function Home() {
 
   const [nav,setNav]=useState(false)
@@ -15,8 +17,12 @@ export default function Home() {
     <div>
       <Navbar openNav={openNav}/>
        <Mobilenav nav={nav} closeNav={closeNav}/>  
-       <Hero/> 
+       <Hero/>
+       <div className='relative z-[30]'>
+        <About/>
+        </div> 
       </div>
+      <Footer/>
     </div>
     // hero section
     
